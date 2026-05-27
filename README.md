@@ -26,12 +26,6 @@ The primary goals of developing this network sniffing application include:
 ### Installation
 The environment was prepared by verifying the Python installation status and installing the `scapy` core module via the command line terminal:
 
-```bash
-# Verify Python version installation
-python --version
-
-# Install Scapy module
-pip install scapy
 
 4. Development & Code Structure
 Inside Visual Studio Code, a dedicated project workspace was established containing the primary script named sniffer.py.
@@ -41,12 +35,6 @@ A target callback function named packet_callback handles processing for incoming
 The processing packet loop is initialized using the sniff() parameters, configured to automatically stop execution after intercepting a fixed ceiling of 20 consecutive packets.
 from scapy.all import sniff
 
-def packet_callback(packet):
-    print(packet.summary())
-
-print("Starting Network Sniffer...")
-
-sniff(prn=packet_callback, count=20)
 5. Execution & Live Traffic Capture
 To deploy the tool and begin logging network data, execute the file directly through your integrated terminal environment:
 python sniffer.py
